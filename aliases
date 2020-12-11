@@ -1,0 +1,44 @@
+if [ "$(command -v exa)" ]; then
+    unalias -m 'll'
+    unalias -m 'l'
+    unalias -m 'la'
+    unalias -m 'ls'
+    alias ls='exa -G  --color auto --icons -a -s type'
+    alias ll='exa -l --color always --icons -a -s type'
+fi
+
+if [ "$(command -v bat)" ]; then
+  unalias -m 'cat'
+  alias cat='bat --theme="Nord"'
+fi
+
+
+alias lf="ls -alh"
+alias anva="cd ~/Volumes/Projects/anva"
+alias youtube-dl="youtube-dl --write-thumbnail --add-metadata --write-sub"
+alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
+
+
+
+# Easier navigation: .., ..., ...., .....
+alias ..="cd .. && ls"
+alias ...="cd ../.. && ls"
+alias ....="cd ../../.. && ls"
+alias .....="cd ../../../.. && ls"
+
+
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias p="cd ~/Projects"
+alias g="git"
+alias pg="echo 'Pinging Google' && ping www.google.com"
+
+
+alias reload="exec ${SHELL} -l"
+
+
+
+alias cp='cp -iv'
+alias mv='mv -iv'
+
+alias econfig='code ~/.dotfiles'

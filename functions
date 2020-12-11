@@ -1,0 +1,24 @@
+# Kills a process running on a specified tcp port
+killport() {
+  echo "Killing process on port: $1"
+  kill -9 $(lsof -t -i:$1 -sTCP:LISTEN)
+}
+
+flushcache(){
+  sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+}
+
+emptytrash() {
+    defaults write com.apple.finder EmptyTrashSecurely -bool false
+    sudo rm -rf ~/.Trash/*
+}
+
+
+
+
+spider(){
+  #rg -oP 'http.?://\S+' 
+  # --reject="js,png,json,bmp,jpeg,jpg,svg"
+  #
+  wget --spider -r -l0 -B -domains="my.trcoa.edu,www.trcoa.edu,www.trcoa.com" --force-html "$1"  2>&1 | rg '^--' | awk '{ print $3 }' | sort | uniq
+} 

@@ -1,0 +1,7 @@
+djui/alias-tips
+wfxr/forgit
+agkozak/zsh-z
+marlonrichert/zsh-autocomplete
+zsh-users/zsh-completions
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-syntax-highlighting

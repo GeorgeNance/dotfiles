@@ -1,0 +1,69 @@
+
+format = """\
+[┌───────────────────>](bold green)
+[│](bold green)$directory\
+  $git_branch\
+  $git_commit\
+  $git_state\
+  $git_status\
+  $cmd_duration\
+  $custom\
+  $jobs\
+  $battery\
+  $time\
+  $python\
+  $status\
+  $line_break\
+  [└─>](bold green) \
+  """
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = true
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+
+
+[git_branch]
+symbol = "🌱 "
+truncation_length = 4
+truncation_symbol = ""
+
+[git_status]
+conflicted = "🏳"
+ahead = "🏎💨${count}"
+behind = "😰${count}"
+diverged = "😵"
+untracked = "🤷‍"
+stashed = "📦"
+modified = "📝"
+staged.value = "++"
+staged.style = "green"
+staged_count.enabled = true
+staged_count.style = "green"
+renamed = "👅"
+deleted = "🗑"
+
+
+[cmd_duration]
+# $duration – The command duration (e.g. "15s")
+# $style    – The default style of the module (e.g. "bold yellow")
+format = "took [$duration]($style) "
+
+[nodejs]
+prefix = "Running"
+
+
+[python]
+symbol = "🐍 "
+
+[time]
+disabled = true
+format = '🕙[\[ $time \]]($style) '
+time_format = "%T"

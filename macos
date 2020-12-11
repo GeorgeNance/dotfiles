@@ -1,0 +1,2 @@
+// Makes sound quality better on Sony Headphones
+sudo defaults write bluetoothaudiod "Enable AAC codec" -bool true

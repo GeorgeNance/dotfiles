@@ -1,0 +1,7 @@
+.zsh_history
+.zcompdump
+.zsh_sessions/
+cache/
+configstore/
+
+.zcompdump*
