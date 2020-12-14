@@ -3,5 +3,5 @@
 .zsh_sessions/
 cache/
 configstore/
-
+vue/
 .zcompdump*

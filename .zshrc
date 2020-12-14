@@ -5,6 +5,7 @@ export DOTFILES=~/.dotfiles
 
 source ${DOTFILES}/aliases
 source ${DOTFILES}/functions
+source ${DOTFILES}/work
 
 
 export STARSHIP_CONFIG=~/.dotfiles/starship.toml
