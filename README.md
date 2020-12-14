@@ -1,0 +1,1 @@
+This folder contains files that don't need to be added to source control.
