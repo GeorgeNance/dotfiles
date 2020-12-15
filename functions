@@ -20,5 +20,13 @@ spider(){
   #rg -oP 'http.?://\S+' 
   # --reject="js,png,json,bmp,jpeg,jpg,svg"
   #
-  wget --spider -r -l0 -B -domains="my.trcoa.edu,www.trcoa.edu,www.trcoa.com" --force-html "$1"  2>&1 | rg '^--' | awk '{ print $3 }' | sort | uniq
-} 
+  wget --spider -r -l0 -B  --force-html "$1"  2>&1 | rg '^--' | awk '{ print $3 }' | sort | uniq 
+}
+
+
+
+
+# Make a directory and cd to it
+take() {
+  mkdir -p $@ && cd ${@:$#}
+}

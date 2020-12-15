@@ -1,11 +1,14 @@
+export HISTSIZE=10000                   # Maximum events for internal history
+export SAVEHIST=10000
+
 export PATH="/usr/local/sbin:$PATH:$HOME/.composer/vendor/bin:/Users/george/Library/Python/2.7/bin"
 export DOTFILES=~/.dotfiles
 
-
-
 source ${DOTFILES}/aliases
 source ${DOTFILES}/functions
-source ${DOTFILES}/work
+
+# Local Files
+source ${DOTFILES}/local/work
 
 
 export STARSHIP_CONFIG=~/.dotfiles/starship.toml
