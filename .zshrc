@@ -20,9 +20,9 @@ autoload -Uz compinit; compinit
 _comp_options+=(globdots) # With hidden files
 
 ##  PLUGINS
-antibody bundle < ${ZDOTDIR}/zsh_plugins.txt > ${ZDOTDIR}/.zsh_plugins.sh
+antibody bundle < ${DOTFILES}/zsh_plugins.txt > ${DOTFILES}/.zsh_plugins.sh
 
-source ${ZDOTDIR}/.zsh_plugins.sh
+source ${DOTFILES}/.zsh_plugins.sh
 
 
 
