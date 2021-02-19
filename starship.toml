@@ -10,9 +10,9 @@ format = """\
   $custom\
   $jobs\
   $battery\
-  $time\
   $python\
   $status\
+  $time\
   $line_break\
   [└─>](bold green) \
   """
@@ -64,6 +64,7 @@ prefix = "Running"
 symbol = "🐍 "
 
 [time]
-disabled = true
+disabled = false
 format = '🕙[\[ $time \]]($style) '
 time_format = "%T"
+

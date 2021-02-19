@@ -3,7 +3,7 @@ if [ "$(command -v exa)" ]; then
     unalias -m 'l'
     unalias -m 'la'
     unalias -m 'ls'
-    alias ls='exa -G  --color auto --icons -a -s type'
+    alias ls='exa -G  --color auto --icons -a -s  type'
     alias ll='exa -l --color always --icons -a -s type'
 fi
 
@@ -20,12 +20,15 @@ alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 
 
 
+alias zshup="antibody bundle < ${DOTFILES}/zsh_plugins.txt > ${DOTFILES}/.zsh_plugins.sh"
+
+
 # Easier navigation: .., ..., ...., .....
 alias ..="cd .. && ls"
 alias ...="cd ../.. && ls"
 alias ....="cd ../../.. && ls"
 alias .....="cd ../../../.. && ls"
-
+alias ~="cd ~"
 
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
@@ -35,13 +38,19 @@ alias pg="echo 'Pinging Google' && ping www.google.com"
 
 
 alias reload="exec ${SHELL} -l"
-
-
-
 alias cp='cp -iv'
 alias mv='mv -iv'
-
-
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 
 alias econfig='code ~/.dotfiles'
+
+
+alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+
+
+alias ytmp3="youtube-dl --extract-audio --audio-format mp3 "
+
+
+#laravel
+alias sail='bash vendor/bin/sail'
+

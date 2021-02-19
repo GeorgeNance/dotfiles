@@ -1,9 +1,8 @@
 # Kills a process running on a specified tcp port
 killport() {
-  echo "Killing process on port: $1"
+  echo "Killing process on port: $1";
   kill -9 $(lsof -t -i:$1 -sTCP:LISTEN)
 }
-
 flushcache(){
   sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
 }
@@ -20,7 +19,7 @@ spider(){
   #rg -oP 'http.?://\S+' 
   # --reject="js,png,json,bmp,jpeg,jpg,svg"
   #
-  wget --spider -r -l0 -B  --force-html "$1"  2>&1 | rg '^--' | awk '{ print $3 }' | sort | uniq 
+  wget --spider -r -l0 -B --no-verbose --force-html "$1"  2>&1 | grep -i URL | sort | uniq 
 }
 
 

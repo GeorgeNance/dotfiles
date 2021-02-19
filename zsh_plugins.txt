@@ -5,3 +5,5 @@ marlonrichert/zsh-autocomplete
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
+lukechilds/zsh-better-npm-completion
+buonomo/yarn-completion
