@@ -2,7 +2,14 @@ export HISTSIZE=10000                   # Maximum events for internal history
 
 export SAVEHIST=10000
 export DOTFILES=~/.dotfiles
-export PATH="/usr/local/sbin:$PATH:$HOME/.composer/vendor/bin:/Users/george/Library/Python/2.7/bin:${DOTFILES}/bin"
+export PATH="/usr/local/sbin:$PATH:$HOME/.composer/vendor/bin:/Users/george/Library/Python/2.7/bin:${DOTFILES}/bin:"
+
+# If you use CleanMyMac or similar tools, make sure to set it up to ignore the antibody home folder, otherwise it may delete your plugins.
+export ANTIBODY_HOME=~/.dotfiles/antibody
+
+
+
+
 
 
 setopt HIST_VERIFY
@@ -23,13 +30,14 @@ source ${DOTFILES}/aliases
 source ${DOTFILES}/functions
 
 # Local Files
-source ${DOTFILES}/local/work
+
 
 
 export STARSHIP_CONFIG=~/.dotfiles/starship.toml
 eval "$(starship init zsh)"
 
-
+zstyle ':completion:*' list-prompt   ''
+zstyle ':completion:*' select-prompt ''
 
 autoload -Uz compinit 
 if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
@@ -42,7 +50,9 @@ fi;
 _comp_options+=(globdots) # With hidden files
 
 ##  PLUGINS
-source ${DOTFILES}/.zsh_plugins.sh
+antibody bundle < ~/.dotfiles/zsh_plugins.txt > ~/.dotfiles/zsh_plugins.sh
+
+source ${DOTFILES}/zsh_plugins.sh
 
 
 
