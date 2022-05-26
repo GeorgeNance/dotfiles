@@ -6,3 +6,4 @@ configstore/
 vue/
 .zcompdump*
 local/*
+antibody/
