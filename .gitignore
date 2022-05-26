@@ -7,3 +7,4 @@ vue/
 .zcompdump*
 local/*
 antibody/
+zsh_plugins.sh
